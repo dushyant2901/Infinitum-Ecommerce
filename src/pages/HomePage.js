@@ -1,8 +1,11 @@
 import React from 'react'
+import { useProductsContext } from '../context/products_context'
 
 const HomePage = () => {
+  const data= useProductsContext()
+  console.log(data)
   return (
-    <div>HomePage</div>
+    <h2>HomePage</h2>
   )
 }
 
