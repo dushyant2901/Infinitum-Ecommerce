@@ -3,7 +3,7 @@ import { SIDEBAR_CLOSE, SIDEBAR_OPEN } from "../actions";
 import reducer from '../reducers/products_reducer'
 const ProductsContext = React.createContext();
 const initialstate = {
-    isOpen:false
+    isSidebarOpen:false
 };
 export const ProductsProvider = ({ children }) => {
 
