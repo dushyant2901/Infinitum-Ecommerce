@@ -5,9 +5,10 @@ import { FaTimes } from "react-icons/fa";
 import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
+import { useProductsContext } from "../context/products_context";
 
 const Sidebar = () => {
-  const isOpen = true;
+  const {isOpen,closeSidebar} = useProductsContext();
   return (
     <SidebarContainer>
       <aside className={`${isOpen ? "sidebar show-sidebar" : "sidebar"}`}>
@@ -15,7 +16,7 @@ const Sidebar = () => {
           <Link to="/">
             <img src={logo} alt="Comfy House" className="logo" />
           </Link>
-          <button className="close-btn" type="button">
+          <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -23,12 +24,12 @@ const Sidebar = () => {
           {links.map(({ id, url, text }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>{text}</Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout">checkout</Link>
+            <Link to="/checkout" onClick={closeSidebar}>checkout</Link>
           </li>
         </ul>
         <CartButtons />
