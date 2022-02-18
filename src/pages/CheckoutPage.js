@@ -1,8 +1,11 @@
 import React from 'react'
-
+import { PageHero } from '../components'
 const CheckoutPage = () => {
   return (
-    <div>CheckoutPage</div>
+   <main>
+      <PageHero title={'Checkout'}/>
+      <div>Checkout page</div>
+   </main>
   )
 }
 
